@@ -2,3 +2,6 @@
 
 .gradle
 .idea
+
+#profile
+application-oauth.properties
