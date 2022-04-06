@@ -4,7 +4,7 @@
 .idea
 
 #profile
-#application-oauth.properties
+application-oauth.properties
 
 
 build
