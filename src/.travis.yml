@@ -27,4 +27,4 @@ before_deploy:
 notifications:
   email:
     recipients:
-      - daisy035510@gmail.com
+      - daria.happ@gmail.com
