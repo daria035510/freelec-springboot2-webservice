@@ -15,11 +15,11 @@ cache:
 script: "./gradlew clean build"
 
 before_deploy:
-  - mkdir -p before-deploy
-  - cp build/libs/*.jar before-deploy/
-  - cd before-deploy && echo "ll" && ls -al && zip -r before-deploy.zip ./*
-  - cd ../ && mkdir -p deploy
-  - mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip # deploy로 zip파일 이동
+  - echo "pwd" && pwd
+  #- cp build/libs/*.jar before-deploy/
+  #- cd before-deploy && echo "ll" && ls -al && zip -r before-deploy.zip ./*
+  #- cd ../ && mkdir -p deploy
+  #- mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip # deploy로 zip파일 이동
 
 deploy:
   - provider: s3
@@ -44,7 +44,7 @@ deploy:
     deployment_group: freelec-springboot2-webservice-group # 웹 콘솔에서 등록한 CodeDeploy 배포 그룹
     region: ap-northeast-2
     wait-until-deployed: true
- 
+
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
