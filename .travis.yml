@@ -16,10 +16,9 @@ script: "./gradlew clean build"
 
 before_deploy:
   - echo "pwd" && pwd
-  #- cp build/libs/*.jar before-deploy/
-  #- cd before-deploy && echo "ll" && ls -al && zip -r before-deploy.zip ./*
-  #- cd ../ && mkdir -p deploy
-  #- mv before-deploy/before-deploy.zip deploy/freelec-springboot2-webservice.zip # deploy로 zip파일 이동
+  - zip -r freelec-springboot2-webservice *
+  - mkdir -p deploy
+  - mv freelec-springboot2-webservice.zip deploy/freelec-springboot2-webservice.zip
 
 deploy:
   - provider: s3
